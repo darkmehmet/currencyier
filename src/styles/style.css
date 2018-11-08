@@ -1,0 +1,112 @@
+* {
+    /* font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+}
+
+.titlebar {
+    background: rgb(177, 134, 255);
+    color: white;
+    border: 0;
+    outline: 0;
+}
+
+.titlebar * {
+    color: #ffffff;
+    border: 0;
+    outline: 0;
+}
+
+/* .titlebar:backdrop  {
+    background: #8A0829;
+    color:white;
+}  */
+
+decoration {
+    border: 0 solid transparent;
+    outline: 0 solid transparent;
+    background: rgb(177, 134, 255);;
+}
+/* decoration:backdrop {
+    border: 2px solid #8A0829;
+    background: #8A0829;
+} */
+
+#headerbar {
+    background-color: rgb(177, 134, 255);
+
+    color: white;
+}
+
+
+#search_entry {
+    font-size: 13px;
+    color: white;
+    margin: 0;
+    padding-left: 25px;
+    margin-top: 19px;
+    margin-bottom: 19px;
+    margin-left: 25px;
+    background: rgb(116, 80, 182);;
+    border-radius: 50px;
+    border: 0;
+    outline: 0;
+}
+
+#currency1 {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    background-color: #EEEDFE;
+
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#currency2 {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    background-color: #FFFFFF;
+
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#currency_image {
+}
+
+#currency_name_box {
+    padding-left: 15px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+#currency_short_label {
+    color: #333333;
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+#currency_long_label {
+    color: #4C4747;
+    font-size: 13px;
+    padding: 0;
+    margin: 0;
+    margin-top: -3px;
+}
+
+#currency_value_label {
+    color: #333333;
+    font-size: 17px;
+
+}
+
+
+#pencere {
+
+background-color: white;
+  box-shadow: none;
+
+}
+
+
