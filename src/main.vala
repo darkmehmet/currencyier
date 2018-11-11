@@ -50,6 +50,11 @@ public class Application : Gtk.Window {
 
 		list.append(third_currency);
 
+		list.append(one_currency);
+		list.append(second_currency);
+		list.append(third_currency);
+		list.append(one_currency);
+
 		currencyMainList.LoadList(list);
 
 		// The Box:

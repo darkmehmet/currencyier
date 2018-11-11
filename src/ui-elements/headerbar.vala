@@ -15,9 +15,12 @@ public class HeaderBar : Gtk.Box {
         //  searchBox.width_request = 200;
     
         var search_entry = new Gtk.Entry ();
+        search_entry.activates_default = false;
+        search_entry.input_purpose = Gtk.InputPurpose.NUMBER ;
         search_entry.name = "search_entry";
-        search_entry.text = "Search...";
-        search_entry.width_request = 250;
+        search_entry.placeholder_text = "Value";
+        search_entry.text = "Value...";
+        search_entry.width_request = 210;
     
         //search_entry.padding = 0;
         
