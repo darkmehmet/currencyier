@@ -15,7 +15,43 @@ public class Application : Gtk.Window {
 
 		HeaderBar headerBar = new HeaderBar();
 		CurrencyMainList currencyMainList = new CurrencyMainList();
-		currencyMainList.LoadList();
+
+
+		var list = new List<CurrencyModel> ();
+		var one_currency = new CurrencyModel();
+		one_currency.country_code = "TR";
+		one_currency.short_name = "TRY";
+		one_currency.long_name = "Turkish Lira";
+		one_currency.symbol = "₺";
+		one_currency.currency_value = 5.4654;
+		one_currency.calculated_value = 5.46;
+
+		list.append(one_currency);
+
+
+		var second_currency = new CurrencyModel();
+		second_currency.country_code = "US";
+		second_currency.short_name = "USD";
+		second_currency.long_name = "United States Dolar";
+		second_currency.symbol = "$";
+		second_currency.currency_value = 1;
+		second_currency.calculated_value = 1;
+
+		list.append(second_currency);
+
+
+		var third_currency = new CurrencyModel();
+		third_currency.country_code = "EU";
+		third_currency.short_name = "EUR";
+		third_currency.long_name = "Euro";
+		third_currency.symbol = "€";
+		third_currency.currency_value = 0.882;
+		third_currency.calculated_value = 0.88;
+
+		list.append(third_currency);
+
+		currencyMainList.LoadList(list);
+
 		// The Box:
 		Gtk.Box box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
 		box.pack_start (headerBar, false, false, 0);
