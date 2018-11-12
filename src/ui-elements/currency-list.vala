@@ -5,7 +5,7 @@ public class CurrencyMainList : Gtk.ScrolledWindow {
 
 
 
-    public void LoadList(List<CurrencyModel> currencies) {
+    public void LoadList(Array<CurrencyModel> currencies) {
 
 
         var currency_list = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
@@ -13,30 +13,41 @@ public class CurrencyMainList : Gtk.ScrolledWindow {
 
         var count = 0;
 
-        currencies.foreach ((currency) => {
-            
-    
+        for (int i = 0; i < currencies.length ; i++) {
+        
+            var currency = currencies.index(i);
 
             var currency1 = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
-            currency1.name = "currency1";
             currency1.name = count % 2 == 0 ? "currency1" : "currency2";
             currency1.height_request = 70;
 
-            var pixbuf = new Gdk.Pixbuf.from_file_at_scale (
-                "./src/assets/flags-round-codes/" + currency.country_code +".svg", 32, 32, true
-            );
-        
             var currency_image = new Gtk.Image();
-            currency_image.set_from_pixbuf(pixbuf);
             currency_image.name = "currency_image";
+
+
+            try {
+
+                var pixbuf = new Gdk.Pixbuf.from_file_at_scale (
+                    "./src/assets/flags-round-codes/" + currency.country_code +".svg", 32, 32, true
+                );
+                
+                currency_image.set_from_pixbuf(pixbuf);
+
+            } catch (GLib.Error e) {}
+        
 
             var currency_name_box = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
             currency_name_box.height_request = 32;
             currency_name_box.name = "currency_name_box";
-            var currency_short_label = new Gtk.Label(currency.short_name);
+            var currency_short_label = new Gtk.Label(currency.currenc_id);
             currency_short_label.name = "currency_short_label";
             currency_short_label.halign = Gtk.Align.START;
-            var currency_long_label = new Gtk.Label(currency.long_name);
+
+            var currency_name = currency.currency_name.length >= 21 ?
+                currency.currency_name[0:19] + "..." :
+                currency.currency_name;
+
+            var currency_long_label = new Gtk.Label(currency_name);
             currency_long_label.name = "currency_long_label";
             currency_long_label.halign = Gtk.Align.START;
 
@@ -47,8 +58,8 @@ public class CurrencyMainList : Gtk.ScrolledWindow {
             char[] buf = new char[5]; // count of numbers
             unowned string value = (currency.calculated_value).to_str (buf);
 
-            var currency_value = currency.symbol != null ? 
-                currency.symbol + value : value;
+            var currency_value = currency.currency_symbol != null ? 
+                currency.currency_symbol + value : value;
 
             var currency_value_label = new Gtk.Label(currency_value);
             currency_value_label.name = "currency_value_label";
@@ -65,7 +76,7 @@ public class CurrencyMainList : Gtk.ScrolledWindow {
         
             count++;
 
-        });
+        };
 
                 
         this.add(currency_list);
