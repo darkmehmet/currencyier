@@ -18,7 +18,7 @@ public class Application : Gtk.Window {
 		var list = new List<CurrencyModel> ();
 		var one_currency = new CurrencyModel();
 		one_currency.country_code = "TR";
-		one_currency.currenc_id = "TRY";
+		one_currency.currency_id = "TRY";
 		one_currency.currency_name = "Turkish Lira";
 		one_currency.currency_symbol = "₺";
 		one_currency.currency_value = 5.4654;
@@ -29,7 +29,7 @@ public class Application : Gtk.Window {
 
 		var second_currency = new CurrencyModel();
 		second_currency.country_code = "US";
-		second_currency.currenc_id = "USD";
+		second_currency.currency_id = "USD";
 		second_currency.currency_name = "United States Dolar";
 		second_currency.currency_symbol = "$";
 		second_currency.currency_value = 1;
@@ -40,7 +40,7 @@ public class Application : Gtk.Window {
 
 		var third_currency = new CurrencyModel();
 		third_currency.country_code = "EU";
-		third_currency.currenc_id = "EUR";
+		third_currency.currency_id = "EUR";
 		third_currency.currency_name = "Euro";
 		third_currency.currency_symbol = "€";
 		third_currency.currency_value = 0.882;

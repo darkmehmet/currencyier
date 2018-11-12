@@ -4,6 +4,16 @@ public class CurrencyData {
 
     public Array<CurrencyModel> currencies;
 
+    public CurrencyModel getCurrency(string currency_id) {
+        var currency = new CurrencyModel();
+        for(int i = 0; i < currencies.length; i++) {
+            if(currencies.index(i).currency_id ==  currency_id ) {
+                currency = currencies.index(i);
+            }
+        }
+        return currency;
+    }
+
     public void load(){
         // Glib.Array
         currencies = new Array<CurrencyModel> ();
@@ -24,7 +34,7 @@ public class CurrencyData {
                 var currencyModel =  new CurrencyModel();
 
                 currencyModel.country_code = one_currency. get_string_member("id");
-                currencyModel.currenc_id = one_currency. get_string_member("currencyId");
+                currencyModel.currency_id = one_currency. get_string_member("currencyId");
                 currencyModel.currency_name = one_currency. get_string_member("currencyName");
                 currencyModel.currency_symbol = one_currency. get_string_member("currencySymbol");
 

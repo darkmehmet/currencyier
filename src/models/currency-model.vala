@@ -1,6 +1,6 @@
 public class CurrencyModel: GLib.Object { 
     public string country_code;
-    public string currenc_id;
+    public string currency_id;
     public string currency_name;
     public string currency_symbol;
     public double currency_value;
@@ -8,7 +8,7 @@ public class CurrencyModel: GLib.Object {
 
     public void CurrencyListModel() {
         country_code = "";
-        currenc_id = "";
+        currency_id = "";
         currency_name = "";
         currency_symbol = "";
         currency_value = 0.0;

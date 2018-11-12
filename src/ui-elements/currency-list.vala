@@ -39,7 +39,7 @@ public class CurrencyMainList : Gtk.ScrolledWindow {
             var currency_name_box = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
             currency_name_box.height_request = 32;
             currency_name_box.name = "currency_name_box";
-            var currency_short_label = new Gtk.Label(currency.currenc_id);
+            var currency_short_label = new Gtk.Label(currency.currency_id);
             currency_short_label.name = "currency_short_label";
             currency_short_label.halign = Gtk.Align.START;
 
